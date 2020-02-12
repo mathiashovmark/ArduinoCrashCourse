@@ -1,4 +1,4 @@
-// Author - Oscar V. Bubandt 
+// Author - Oscar V. Bubandt
 
 const int buttonPin = 2;     // the number of the pushbutton pin
 const int ledPin =  13;      // the number of the LED pin
@@ -11,6 +11,9 @@ void setup() {
   pinMode(ledPin, OUTPUT);
   // initialize the pushbutton pin as an input:
   pinMode(buttonPin, INPUT);
+
+  // initialize serial communication at 9600 bits per second:
+  Serial.begin(9600);
 }
 
 void loop() {
@@ -19,11 +22,18 @@ void loop() {
 
   // check if the pushbutton is pressed. If it is, the buttonState is HIGH:
   if (buttonState == HIGH) {
+    
     // turn LED on:
     digitalWrite(ledPin, HIGH);
-    delay(timer);
-    
+
+    // print out the value you read:
+    Serial.println("Led on"); // led state to serial monitor
+    delay(timer); // time button is on
+
     digitalWrite(ledPin, LOW);
+
+    // print out the value you read:
+    Serial.println("Led off"); 
     delay(timer);
 
   } else {
