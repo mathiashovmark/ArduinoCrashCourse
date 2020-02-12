@@ -9,7 +9,7 @@
 
   delay(MILLISECONDS); - pauses the sketch for a number of milliseconds
 */
-int number = 0; // defines a varibel called number as a Integers with the value 0 
+int number = 0; // defines a variable called 'number' as an 'integer' with the value 0 
 void setup() {
   // put your setup code here, to run once:
 Serial.begin(9600); // tells the Arduino which data rate to use for serial data transmission. 9600 bits per second is fine for this use.
@@ -17,8 +17,8 @@ Serial.begin(9600); // tells the Arduino which data rate to use for serial data 
 
 void loop() {
   // put your main code here, to run repeatedly:
-  Serial.print(number); // print the value of the varibel number
-  if (0 == number % 2){ // the modulo operator is used for the if statement's condition - see https://www.arduino.cc/en/pmwiki.php?n=Reference/Modulo
+  Serial.print(number); // print the value of the variable 'number'
+  if (0 == number % 2){ // the modulo operator ('%') is used for the if statement's condition - see https://www.arduino.cc/en/pmwiki.php?n=Reference/Modulo
     Serial.println(" is even");
   } else {
     Serial.println(" is odd");
